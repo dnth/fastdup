@@ -1,25 +1,12 @@
-name: kaggle gpu test
+name: Example CI Test
 on:
   workflow_dispatch:
   push:
 jobs:
-  kaggle-ci:
-    name: Kaggle CI
+  test-quick-dataset-analysis:
+    name: Test Quick Dataset Analysis Example
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v3
-        with:
-          python-version: '3.9'
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install fastdup
-
       - name: Run kaggle
         uses: Frederisk/kaggle-action@v1.0.0
         with:
@@ -29,4 +16,4 @@ jobs:
           # Try to avoid underscores, spaces or other special characters.
           title: KaggleTestCI
           # The location of your test script, which we will write next.
-          code_file: .github/workflows/tests/test_quickstart.py
+          code_file: .github/workflows/tests/test_quick_dataset_analysis.py
