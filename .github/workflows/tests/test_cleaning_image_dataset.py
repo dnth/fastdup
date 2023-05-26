@@ -13,7 +13,7 @@ callsh(['tar', '-xf', 'food-101.tar.gz'])
 import fastdup
 print(f'fastdup version: {fastdup.__version__}')
 
-fd = fastdup.create(work_dir="fastdup_work_dir/", input_dir="images/")
+fd = fastdup.create(work_dir="fastdup_work_dir/", input_dir="food-101/images/")
 fd.run(num_images=1000)
 
 fd.vis.duplicates_gallery(num_images=5)
