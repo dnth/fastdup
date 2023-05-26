@@ -21,6 +21,7 @@ jobs:
           title: TestQuickDatasetAnalysis
           # The location of your test script, which we will write next.
           code_file: .github/workflows/tests/test_quick_dataset_analysis.py
+  
   test-cleaning-image-datasets:
     name: Test Cleaning Image Dataset
     runs-on: ubuntu-latest
@@ -37,4 +38,4 @@ jobs:
           # Try to avoid underscores, spaces or other special characters.
           title: TestCleaningImageDataset
           # The location of your test script, which we will write next.
-          code_file: .github/workflows/tests/test_quick_dataset_analysis.py
+          code_file: .github/workflows/tests/test_cleaning_image_dataset.py
