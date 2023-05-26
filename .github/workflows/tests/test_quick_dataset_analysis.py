@@ -25,4 +25,4 @@ import fastdup
 print(f'fastdup version: {fastdup.__version__}')
 
 fd = fastdup.create(work_dir="fastdup_work_dir/", input_dir="images/")
-fd.run()
+fd.run(num_images=1000)
