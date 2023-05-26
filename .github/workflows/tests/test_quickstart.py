@@ -18,8 +18,8 @@ def callsh(command):
 callsh(['pip', 'install', 'fastdup'])
 
 callsh(['wget', 'https://thor.robots.ox.ac.uk/~vgg/data/pets/images.tar.gz', '-O', 'images.tar.gz'])
-callsh('tar', 'xf', 'images.tar.gz')
-callsh('ls')
+callsh(['tar', 'xf', 'images.tar.gz'])
+callsh(['ls'])
 
 import fastdup
 print(f'fastdup version: {fastdup.__version__}')
