@@ -2,21 +2,27 @@ name: Examples CI Test
 on:
   workflow_dispatch:
   push:
+  
 jobs:
-  test-quick-dataset-analysis:
-    name: Test Quick Dataset Analysis
+  checkout-repo:
+    name: Clone repo
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Run kaggle
+  test-quick-dataset-analysis:
+    name: Test Quick Dataset Analysis
+    needs: checkout-repo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Quick Dataset Analysis on Kaggle
         uses: Frederisk/kaggle-action@v1.0.0
         with:
           username: ${{ secrets.KAGGLE_USERNAME }}
           key: ${{ secrets.KAGGLE_TOKEN }}
           # The name of the kaggle used for testing, take a new one.
           # Try to avoid underscores, spaces or other special characters.
-          title: KaggleTestCI
+          title: TestQuickDatasetAnalysis
           # The location of your test script, which we will write next.
           code_file: .github/workflows/tests/test_quick_dataset_analysis.py
