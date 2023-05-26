@@ -1,7 +1,7 @@
 name: kaggle gpu test
 on:
   workflow_dispatch:
-  push: [master, main]
+  push:
 jobs:
   kaggle-ci:
     name: kaggle CI
