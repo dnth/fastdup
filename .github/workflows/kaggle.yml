@@ -29,4 +29,4 @@ jobs:
           # Try to avoid underscores, spaces or other special characters.
           title: KaggleTestCI
           # The location of your test script, which we will write next.
-          code_file: .github/tests/test_quickstart.py
+          code_file: .github/workflows/tests/test_quickstart.py
