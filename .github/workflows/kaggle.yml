@@ -5,12 +5,12 @@ on:
 
 jobs:
   test-quick-dataset-analysis:
-    name: Checkout repository
-    uses: actions/checkout@v3
-  
     name: Test Quick Dataset Analysis
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Run Quick Dataset Analysis on Kaggle
         uses: Frederisk/kaggle-action@v1.0.0
         with:
