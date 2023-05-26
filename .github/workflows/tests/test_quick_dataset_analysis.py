@@ -16,10 +16,8 @@ def callsh(command):
 
 # callsh(['conda', 'create', '-n', 'testenv', 'python=3.9', '-y'])
 callsh(['pip', 'install', 'fastdup'])
-
 callsh(['wget', 'https://thor.robots.ox.ac.uk/~vgg/data/pets/images.tar.gz', '-O', 'images.tar.gz'])
 callsh(['tar', 'xf', 'images.tar.gz'])
-callsh(['ls'])
 
 import fastdup
 print(f'fastdup version: {fastdup.__version__}')

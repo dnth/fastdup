@@ -5,7 +5,6 @@ on:
 
 jobs:
   test-quick-dataset-analysis:
-    name: Test Quick Dataset Analysis
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -23,7 +22,6 @@ jobs:
           code_file: .github/workflows/tests/test_quick_dataset_analysis.py
   
   test-cleaning-image-datasets:
-    name: Test Cleaning Image Dataset
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
