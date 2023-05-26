@@ -2,16 +2,12 @@ name: Examples CI Test
 on:
   workflow_dispatch:
   push:
-  
-jobs:
-  checkout-repo:
-    name: Clone repo
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
 
+jobs:
   test-quick-dataset-analysis:
+    name: Checkout repository
+    uses: actions/checkout@v3
+  
     name: Test Quick Dataset Analysis
     needs: checkout-repo
     runs-on: ubuntu-latest
