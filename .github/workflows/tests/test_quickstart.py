@@ -14,8 +14,8 @@ def callsh(command):
 # callsh(['/opt/conda/envs/testenv/bin/pytest', 'tests'])
 # ......
 
-callsh(['conda', 'create', '-n', 'testenv', 'python=3.9', '-y'])
-callsh(['/opt/conda/envs/testenv/bin/pip', 'install', 'fastdup'])
+# callsh(['conda', 'create', '-n', 'testenv', 'python=3.9', '-y'])
+callsh(['pip', 'install', 'fastdup'])
 
 import fastdup
 print(f'fastdup version: {fastdup.__version__}')
