@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -e .
+          pip install fastdup
 
       - name: Run kaggle
         uses: Frederisk/kaggle-action@v1.0.0
