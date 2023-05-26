@@ -1,0 +1,32 @@
+name: kaggle gpu test
+on:
+  workflow_dispatch:
+  push: [master, main]
+jobs:
+  kaggle-ci:
+    name: kaggle CI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+          uses: actions/setup-python@v3
+          with:
+            python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      - name: Run kaggle
+        uses: Frederisk/kaggle-action@v1.0.0
+        with:
+          username: ${{ secrets.KAGGLE_USERNAME }}
+          key: ${{ secrets.KAGGLE_TOKEN }}
+          # The name of the kaggle used for testing, take a new one.
+          # Try to avoid underscores, spaces or other special characters.
+          title: KaggleTestCI
+          # The location of your test script, which we will write next.
+          code_file: .github/tests/test_quickstart.py
