@@ -4,7 +4,7 @@ on:
   push:
 jobs:
   kaggle-ci:
-    name: kaggle CI
+    name: Kaggle CI
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
