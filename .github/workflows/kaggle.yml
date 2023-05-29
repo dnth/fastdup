@@ -37,3 +37,37 @@ jobs:
           title: TestCleaningImageDataset
           # The location of your test script, which we will write next.
           code_file: .github/workflows/tests/test_cleaning_image_dataset.py
+
+  test-image-classification-datasets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run Analyzing Image Classification Datasets on Kaggle
+        uses: Frederisk/kaggle-action@v1.0.0
+        with:
+          username: ${{ secrets.KAGGLE_USERNAME }}
+          key: ${{ secrets.KAGGLE_TOKEN }}
+          # The name of the kaggle used for testing, take a new one.
+          # Try to avoid underscores, spaces or other special characters.
+          title: TestImageClassificationDataset
+          # The location of your test script, which we will write next.
+          code_file: .github/workflows/tests/test_analyzing_image_classification_dataset.py
+
+  test-object-detection-datasets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run Analyzing Object Detection Dataset on Kaggle
+        uses: Frederisk/kaggle-action@v1.0.0
+        with:
+          username: ${{ secrets.KAGGLE_USERNAME }}
+          key: ${{ secrets.KAGGLE_TOKEN }}
+          # The name of the kaggle used for testing, take a new one.
+          # Try to avoid underscores, spaces or other special characters.
+          title: TestObjectDetectionDataset
+          # The location of your test script, which we will write next.
+          code_file: .github/workflows/tests/test_analyzing_object_detection_dataset.py
