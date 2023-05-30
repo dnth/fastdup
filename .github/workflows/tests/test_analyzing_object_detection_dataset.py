@@ -2,14 +2,19 @@ import os
 import subprocess
 
 def callsh(command):
-  status = subprocess.run(command)
+  status = subprocess.run(command, shell=True)
   status.check_returncode()
   print(status.stdout)
 
-callsh(['pip', 'install', 'fastdup', 'plotly', 'gdown'])
-callsh(['gdown', '--fuzzy', 'https://drive.google.com/file/d/1iSXVTlkV1_DhdYpVDqsjlT4NJFQ7OkyK/view'])
-callsh(['unzip', '-qq', 'coco_minitrain_25k.zip'])
-callsh(['cd', 'coco_minitrain_25k/annotations', '&&', 'gdown', '--fuzzy', 'https://drive.google.com/file/d/1i12p23cXlqp1QrXjAD_vu467r4q67Mq9/view'])
+# callsh(['pip', 'install', 'fastdup', 'plotly', 'gdown'])
+# callsh(['gdown', '--fuzzy', 'https://drive.google.com/file/d/1iSXVTlkV1_DhdYpVDqsjlT4NJFQ7OkyK/view'])
+# callsh(['unzip', '-qq', 'coco_minitrain_25k.zip'])
+# callsh(['cd', 'coco_minitrain_25k/annotations', '&&', 'gdown', '--fuzzy', 'https://drive.google.com/file/d/1i12p23cXlqp1QrXjAD_vu467r4q67Mq9/view'])
+
+callsh("pip install fastdup plotly gdown")
+callsh("gdown --fuzzy https://drive.google.com/file/d/1iSXVTlkV1_DhdYpVDqsjlT4NJFQ7OkyK/view")
+callsh("unzip -qq coco_minitrain_25k.zip")
+callsh("cd coco_minitrain_25k/annotations && gdown --fuzzy https://drive.google.com/file/d/1i12p23cXlqp1QrXjAD_vu467r4q67Mq9/view")
 
 import fastdup
 print(f'fastdup version: {fastdup.__version__}')
